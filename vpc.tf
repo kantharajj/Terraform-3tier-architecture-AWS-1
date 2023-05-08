@@ -131,7 +131,7 @@ resource "aws_route_table_association" "rt2" {
 # Creating 1st EC2 instance in Public Subnet
 
 resource "aws_instance" "demoinstance" {
-  ami                         = "ami-087c17d1fe0178315"
+  ami                         = "ami-03c7d01cf4dedc891"
   instance_type               = "t2.micro"
   key_name                    = "VPC"
   vpc_security_group_ids      = ["${aws_security_group.demosg.id}"]
@@ -148,7 +148,7 @@ tags = {
 # Creating 2nd EC2 instance in Public Subnet
 
 resource "aws_instance" "demoinstance1" {
-  ami                         = "ami-087c17d1fe0178315"
+  ami                         = "ami-03c7d01cf4dedc891"
   instance_type               = "t2.micro"
   key_name                    = "VPC"
   vpc_security_group_ids      = ["${aws_security_group.demosg.id}"]
@@ -296,7 +296,7 @@ resource "aws_db_instance" "default" {
   allocated_storage      = 10
   db_subnet_group_name   = aws_db_subnet_group.default.id
   engine                 = "mysql"
-  engine_version         = "8.0.20"
+  engine_version         = "8.0.28"
   instance_class         = "db.t2.micro"
   multi_az               = true
   db_name                   = "mydb"
